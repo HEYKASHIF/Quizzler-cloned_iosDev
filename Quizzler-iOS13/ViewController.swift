@@ -49,6 +49,10 @@ class ViewController: UIViewController {
             questionNumber += 1
             
         }
+        else
+        {
+            questionNumber = 0
+        }
         
         updateUI()
         

@@ -26,12 +26,24 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        questionLabel.text = quiz[questionNumber]
+        updateUI()
+        
         // Do any additional setup after loading the view.
     }
 
 
-    @IBAction func answerButtonPressed(_ sender: UIButton) {
+    @IBAction func answerButtonPressed(_ sender: UIButton)
+    {
+        questionNumber += 1
+        updateUI()
+        
+        
+    }
+    
+    func updateUI()
+    {
+        questionLabel.text = quiz[questionNumber]
+        
     }
 }
 

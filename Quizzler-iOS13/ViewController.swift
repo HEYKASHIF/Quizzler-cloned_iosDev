@@ -44,7 +44,12 @@ class ViewController: UIViewController {
         {
             print("Wrong!")
         }
-        questionNumber += 1
+        if(questionNumber<2)
+        {
+            questionNumber += 1
+            
+        }
+        
         updateUI()
         
         

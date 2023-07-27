@@ -22,9 +22,11 @@ class ViewController: UIViewController {
     
     ]
     
+    var questionNumber = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        questionLabel.text = quiz[0]
+        questionLabel.text = quiz[questionNumber]
         // Do any additional setup after loading the view.
     }
 

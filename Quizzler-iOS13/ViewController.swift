@@ -94,6 +94,7 @@ class ViewController: UIViewController {
         questionLabel.textColor = UIColor.black
         trueButton.backgroundColor = UIColor.clear
         falseButton.backgroundColor = UIColor.clear
+        progressBar.progress = Float(questionNumber+1)/Float(quiz.count)
         
     }
 }

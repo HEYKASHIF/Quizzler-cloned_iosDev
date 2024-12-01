@@ -49,7 +49,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         //trueButton.backgroundColor = .black
         //falseButton.tintColor = .black
-        trueButton.layer.borderColor = UIColor.white.cgColor
+        //trueButton.layer.borderColor = UIColor.white.cgColor
         updateUI()
         
         // Do any additional setup after loading the view.
@@ -63,31 +63,37 @@ class ViewController: UIViewController {
         if(userAnswer == actualAnswer)
         {
             print("Right!")
+            sender.backgroundColor = UIColor.green
         }
         else
         {
             print("Wrong!")
+            sender.backgroundColor = UIColor.red
         }
+        
+        
         if(questionNumber<16)
         {
             questionNumber += 1
-            
         }
         else
         {
             questionNumber = 0
         }
         
-        updateUI()
+        Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(updateUI) , userInfo: nil, repeats: false)
+        
         
         
     }
     
-    func updateUI()
+    @objc func updateUI()
     {
         
         questionLabel.text = quiz[questionNumber].text
         questionLabel.textColor = UIColor.black
+        trueButton.backgroundColor = UIColor.clear
+        falseButton.backgroundColor = UIColor.clear
         
     }
 }
